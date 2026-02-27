@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Hole and Mole Game</title>
+</head>
+
+<body>
+  <!-- Menu Page -->
+  <div id="menuPage" class="menu-page">
+    <div class="menu-container">
+      <h1 class="menu-title">Catch me, If you can</h1>
+      <div class="menu-buttons">
+        <button class="menu-btn" onclick="startNewGame()">🎮 New Game</button>
+        <button class="menu-btn" onclick="continueGame()">▶️ Continue Game</button>
+        <button class="menu-btn" onclick="showHighScores()">🏆 High Scores</button>
+        <button class="menu-btn" onclick="toggleSounds()" id="soundBtn">🔊 Sound: ON</button>
+        <button class="menu-btn exit-btn" onclick="exitGame()">❌ Exit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- High Scores Modal -->
+  <div id="scoresModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeHighScores()">&times;</span>
+      <h2>🏆 Top 10 High Scores</h2>
+      <div id="scoresList" class="scores-list">
+        <p>No scores yet. Play a game to get started!</p>
+      </div>
+      <button class="modal-btn" onclick="closeHighScores()">Back to Menu</button>
+    </div>
+  </div>
+
+  <!-- Game Page -->
+  <div id="gamePage" class="game-page" style="display: none;">
+    <button class="back-btn" onclick="backToMenu()">← Back to Menu</button>
+    <h1>Catch me, If you can</h1>
+    <h2 class="score-block">Score:<span class="score">0</span></h2>
+
+    <div class="levels">
+      <div>
+        <input type="radio" name="level" id="easy" checked />
+        <label for="easy">Easy</label><br />
+      </div>
+      <div>
+        <input type="radio" name="level" id="medium" />
+        <label for="medium">Medium</label><br />
+      </div>
+      <div>
+        <input type="radio" name="level" id="hard" />
+        <label for="hard">Hard</label><br />
+      </div>
+    </div>
+
+    <div class="controls">
+      <input type="number" class="controls-content timer" min="5" max="1000" step="5" placeholder="duration" />
+      <button class="controls-content start-btn" onClick="startGame()">Start</button>
+      <button class="controls-content cancel-btn" onClick="endGame()">Cancel</button>
+    </div>
+
+    <div class="game">
+      <div class="hole hole1">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole2">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole3">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole4">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole5">
+        <div class="mole"></div>
+      </div>
+      <div class="hole hole6">
+        <div class="mole"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
